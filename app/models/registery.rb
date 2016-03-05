@@ -1,3 +1,7 @@
 class Registery < ActiveRecord::Base
-  # Remember to create a migration!
+
+  belongs_to :user
+
+  validates :item, presence: true
+
 end
