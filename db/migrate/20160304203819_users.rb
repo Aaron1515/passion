@@ -7,6 +7,7 @@ class Users < ActiveRecord::Migration
       t.string :p1_last_name
       t.string :p2_first_name
       t.string :p2_last_name
+      t.string :phone_number
       t.string :email
       t.string :home_address
       t.string :wedding_location
