@@ -14,6 +14,9 @@ gem 'rake'
 
 gem 'shotgun'
 gem 'pry'
+gem 'bcrypt'
+gem 'email_validator'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
