@@ -10,6 +10,7 @@ class Guests < ActiveRecord::Migration
       t.integer :invited_party
       t.integer :confirmed_party default: 0
       t.boolean :invited default: :false
+      t.boolean :attending? default: :false
       t.boolean :confirmation default: :false
 
       t.string :purchsed_item

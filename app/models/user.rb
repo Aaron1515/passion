@@ -13,6 +13,31 @@ class User < ActiveRecord::Base
     self.wedded = true
   end
 
+  def guests
+    self.guests.all
+  end
+
+# Add new guest to registery and wedding list
+  def invite(name, email, address, invited_party)
+    # Guest.create(name: name, email: email, address: address, invited_party: invited_party, user_id: self.id)
+  end
+
+# Uninvte people to your wedding
+  def uninvite(guest_id)
+    # guest = self.guests.find_by_id(guest_id)
+    # guest.destry
+  end
+
+# Generate a list of guest to a cvs file
+  def generate_list_to_file
+    csv_string = CSV.generate do |csv|
+      csv << ["name", "email", "address", "invited_part"]
+      self.guests.all.each do |guest|
+        csv << [guest.name, guest.email, guest.address, guest.invited_part]
+      end#end each guest
+    end #end csv_string
+    return csv_string
+  end
 
 
   def password
