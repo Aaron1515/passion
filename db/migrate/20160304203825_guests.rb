@@ -12,6 +12,9 @@ class Guests < ActiveRecord::Migration
       t.boolean :invited default: :false
       t.boolean :confirmation default: :false
 
+      t.string :purchsed_item
+      t.integer :puchased_quantity
+
       t.timestamps
     end
   end

@@ -2,11 +2,18 @@ class User < ActiveRecord::Base
 
   has_many :registeries
   has_many :guests
+  has_many :checklists, class_name: "CheckList", foreign_key: "user_id"
 
   validates :p1_first_name, :p1_first_name, :p2_first_name, :p2_last_name, :home_address, :wedding_location,  presence: true
   validates :wedding_name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true, email: true
   validates :password_hash, presence: true
+
+  def congratulation
+    self.wedded = true
+  end
+
+
 
   def password
     @password ||= BCrypt::Password.new(password_hash)
@@ -20,4 +27,5 @@ class User < ActiveRecord::Base
   def authenticate(expected_password)
     return self.password == expected_password
   end
+
 end
