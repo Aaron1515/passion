@@ -1,21 +1,27 @@
 # Form to create new user
-get 'users/new' do
-  # erb :"/users/new"
+get '/users/new' do
+  erb :"/users/new"
 end
 
 # User's login page
 get '/users/login' do
-  # erb :login
+  erb :"/users/login"
 end
 
 #Validate user's info/or create new user
 post '/users' do
-
+  @user = User.find_by(user_name: params[:user_name])
+  if @user.authenticate(password: params[:password])
+    session[:id] = @user.id
+    erb :"/users/home"
+  else
+    erb :"/users/login"
+  end
 end
 
 # User's home page
 get '/users/:id' do
-  # erb :homepage
+  erb :homepage
 end
 
 # Form to edit user's info

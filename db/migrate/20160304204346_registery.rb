@@ -1,4 +1,4 @@
-class Registeries < ActiveRecord::Migration
+class Registery < ActiveRecord::Migration
   def change
     create_table :registeries do |t|
       t.integer :user_id

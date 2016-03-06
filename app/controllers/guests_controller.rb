@@ -17,3 +17,7 @@ end
 post '/guest/:id' do
   redirect "/guest/:id"
 end
+
+get '/guests/login' do
+  erb :"/guests/login"
+end

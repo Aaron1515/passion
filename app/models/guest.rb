@@ -1,6 +1,7 @@
 class Guest < ActiveRecord::Base
 
   belongs_to :user
+  belongs_to :address
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true, email: true

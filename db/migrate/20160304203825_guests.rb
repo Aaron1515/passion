@@ -6,15 +6,9 @@ class Guests < ActiveRecord::Migration
       t.string :name
       t.string :password_hash
       t.string :email
-      t.string :address
-      t.integer :invited_party
+      t.string :confirmed
       t.integer :confirmed_party default: 0
       t.boolean :invited default: :false
-      t.boolean :attending? default: :false
-      t.boolean :confirmation default: :false
-
-      t.string :purchsed_item
-      t.integer :puchased_quantity
 
       t.timestamps
     end
