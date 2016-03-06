@@ -16,7 +16,7 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem 'email_validator'
-
+# gem 'csv'
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'

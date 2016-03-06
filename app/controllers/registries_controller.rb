@@ -12,6 +12,7 @@ end
 
 # Create a new registery list
 post '/users/:id/registeries' do
+  # @registery = Registery.new(name: )
   erb :"/registeries"
 end
 
@@ -22,13 +23,13 @@ end
 
 # Update the registery list
 put '/users/:id/registeries/id:' do
-  erb :"/registeries/edit"
+  redirect :"/registeries/edit"
 end
 
 # Delete the registery list
 delete '/users/:id/registeries/:id' do
-  @user = User.find(params[:id])
-  @registery =@user.registery.find(params[:id])
-  @registery.destroy
-  redirect :"/users/#{@user.id}"
+  # @user = User.find_by(params[:id])
+  # @registery =@user.registery.find(params[:id])
+  # @registery.destroy
+  # redirect :"/users/#{@user.id}"
 end
