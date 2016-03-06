@@ -1,4 +1,4 @@
-class Registery < ActiveRecord::Base
+class Reminder < ActiveRecord::Base
 
   belongs_to :user
 

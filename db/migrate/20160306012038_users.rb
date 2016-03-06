@@ -11,7 +11,7 @@ class Users < ActiveRecord::Migration
       t.string :phone_number
       t.string :email
 
-      t.boolean :wedded default: :false
+      t.boolean :wedded, default: :false
 
       # t.string :go_fund_me_account
 
